@@ -9,31 +9,7 @@
 </head>
 <body ng-app="pokedex">
 
-	<div class="container">
-		<h1>Pokédex</h1>
-
-		<!-- Search -->
-        <div ng-controller="ListeController">
-            <label>Filtrer: <input ng-model="searchText"></label>
-            <select name="pokemon" id="pk" ng-model="data.model">
-                <option ng-repeat="pokemon in data.liste | filter:searchText"
-                        value="{{pokemon.entry_number}}">
-                    {{pokemon.pokemon_species.name}}
-                </option>
-            </select>
-            <button ng-click="select()">Go !</button>
-        </div>
-
-
-        <!-- Pokémon information -->
-		<div ng-controller="PokemonController">
-            <div ng-if="pokemon!=null">
-            <h1>#{{pokemon.id}} {{pokemon.name}}</h1>
-            <img src={{pokemon.sprites.front_default}}>
-            </div>
-        </div>
-
-	</div>
+<div pokedex></div>
 
     <!-- Dependencies -->
     <script src="js/jquery.min.js"></script>

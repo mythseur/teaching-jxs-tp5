@@ -1,5 +1,11 @@
 var pokeApp = angular.module('pokedex', ['ngResource']);
 
+pokeApp.directive('pokedex', function () {
+    return {
+        templateUrl: 'pokedex.html'
+    };
+});
+
 pokeApp.config(function ($resourceProvider) {
     $resourceProvider.defaults.stripTrailingSlashes = false;
 });
